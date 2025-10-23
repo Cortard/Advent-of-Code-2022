@@ -37,8 +37,14 @@ void BaseDay::solvePart(const int part, std::string (BaseDay::*solver)() const) 
     const auto start = std::chrono::steady_clock::now();
     const std::string result = (this->*solver)();
     const auto end = std::chrono::steady_clock::now();
+    const auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
-    saveResult(part, result, std::chrono::duration_cast<std::chrono::nanoseconds>(end - start));
+    printResult(part, result, duration);
+    saveResult(part, result, duration);
+}
+
+void BaseDay::printResult(unsigned int part, const std::string &result, const std::chrono::steady_clock::duration duration) const {
+    std::cout << std::format("Result for Day {} Part {} in {} : {}\n", day, part, formatDuration(duration), result);
 }
 
 void BaseDay::saveResult(unsigned int part, const std::string& result, const std::chrono::nanoseconds duration) const {

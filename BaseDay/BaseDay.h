@@ -28,6 +28,7 @@ private:
     [[nodiscard]] static std::string formatDuration(std::chrono::high_resolution_clock::duration durationInNano) noexcept;
     [[nodiscard]] std::filesystem::path getDataDirectory() const noexcept;
 
+    void printResult(unsigned int part, const std::string& result, std::chrono::steady_clock::duration duration ) const;
     void saveResult(unsigned int part, const std::string& result, std::chrono::steady_clock::duration duration ) const;
     void solvePart(int part, std::string (BaseDay::*solver)() const) const;
 };
