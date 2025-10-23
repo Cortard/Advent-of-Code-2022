@@ -1,0 +1,10 @@
+#Jetbrains editor files
+.idea/*
+
+#Input file should be ignored as ask by challenge creator
+*/input.txt
+#Same for output file
+*/Day?-Part?.txt
+
+#Personnal template
+Day0/*
