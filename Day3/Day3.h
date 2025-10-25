@@ -1,5 +1,5 @@
-#ifndef ADVENT_OF_CODE_2022_DAY0_H
-#define ADVENT_OF_CODE_2022_DAY0_H
+#ifndef ADVENT_OF_CODE_2022_DAY3_H
+#define ADVENT_OF_CODE_2022_DAY3_H
 #include "../BaseDay/BaseDay.h"
 
 
@@ -14,4 +14,4 @@ protected:
 };
 
 
-#endif //ADVENT_OF_CODE_2022_DAY0_H
+#endif //ADVENT_OF_CODE_2022_DAY3_H
