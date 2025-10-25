@@ -16,4 +16,6 @@ add_executable(Advent_of_Code_2022 main.cpp
         Day3/Day3.cpp
         Day3/Rucksack/Rucksack.h
         Day3/Rucksack/Rucksack.cpp
+        Day4/Day4.h
+        Day4/Day4.cpp
 )
