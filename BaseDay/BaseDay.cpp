@@ -91,4 +91,8 @@ std::string BaseDay::formatDuration(const std::chrono::nanoseconds durationInNan
 }
 
 
-BaseDay::BaseDay(const unsigned int day) : day(day) {}
+BaseDay::BaseDay(const unsigned int day) : day(day) {
+    if ( day == 0 ) {
+        throw std::runtime_error("Day number can't be 0.");
+    }
+}
