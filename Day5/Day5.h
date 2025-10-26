@@ -17,12 +17,6 @@ protected:
     [[nodiscard]] std::string DoSolvePart2() const override;
 
 private:
-    enum ReadingStep {
-        LoadingStacksCrates,
-        WaitingForMoveInstruction,
-        MovingCrates
-    };
-
     static std::vector<std::stack<char>> GetInitialStacks(std::ifstream &file);
 
     static bool IsEndOfStacksDescription(const std::string& line);
