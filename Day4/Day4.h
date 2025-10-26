@@ -3,7 +3,7 @@
 #include "../BaseDay/BaseDay.h"
 
 
-class Day4 : public BaseDay {
+class Day4 final : public BaseDay {
 
 public:
     Day4();
