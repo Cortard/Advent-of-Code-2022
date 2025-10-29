@@ -4,24 +4,28 @@
 #include <memory>
 #include <iostream>
 
-void BaseDay::SolveAll() {
-    try { SolvePart1(); }
+std::chrono::high_resolution_clock::duration BaseDay::SolveAll() {
+    std::chrono::high_resolution_clock::duration totalTime{};
+
+    try { totalTime+= SolvePart1(); }
     catch (const std::exception& e) {
         std::cerr << std::format("Day {} Part1 failed: ", day) << e.what() << '\n';
     }
 
-    try { SolvePart2(); }
+    try { totalTime+= SolvePart2(); }
     catch (const std::exception& e) {
         std::cerr << std::format("Day {} Part2 failed: ", day) << e.what() << '\n';
     }
+
+    return totalTime;
 }
 
-void BaseDay::SolvePart1() {
-    solvePart(1, &BaseDay::DoSolvePart1);
+std::chrono::high_resolution_clock::duration BaseDay::SolvePart1() {
+    return solvePart(1, &BaseDay::DoSolvePart1);
 }
 
-void BaseDay::SolvePart2() {
-    solvePart(2, &BaseDay::DoSolvePart2);
+std::chrono::high_resolution_clock::duration BaseDay::SolvePart2() {
+    return solvePart(2, &BaseDay::DoSolvePart2);
 }
 
 std::unique_ptr<std::ifstream> BaseDay::OpenInputFile() const {
@@ -33,7 +37,7 @@ std::unique_ptr<std::ifstream> BaseDay::OpenInputFile() const {
     return file;
 }
 
-void BaseDay::solvePart(const int part, std::string (BaseDay::*solver)() const) const {
+std::chrono::high_resolution_clock::duration BaseDay::solvePart(const int part, std::string (BaseDay::*solver)() const) const {
     const auto start = std::chrono::steady_clock::now();
     const std::string result = (this->*solver)();
     const auto end = std::chrono::steady_clock::now();
@@ -41,6 +45,8 @@ void BaseDay::solvePart(const int part, std::string (BaseDay::*solver)() const) 
 
     printResult(part, result, duration);
     saveResult(part, result, duration);
+
+    return duration;
 }
 
 void BaseDay::printResult(unsigned int part, const std::string &result, const std::chrono::steady_clock::duration duration) const {
