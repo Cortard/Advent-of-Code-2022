@@ -9,6 +9,7 @@
 #include "Day3/Day3.h"
 #include "Day4/Day4.h"
 #include "Day5/Day5.h"
+#include "Day6/Day6.h"
 
 int main() {
     #ifdef _WIN32
@@ -29,6 +30,9 @@ int main() {
 
     Day5 day5;
     day5.SolveAll();
+
+    Day6 day6;
+    day6.SolveAll();
 
     return 0;
 }
