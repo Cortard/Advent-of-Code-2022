@@ -22,4 +22,12 @@ add_executable(Advent_of_Code_2022 main.cpp
         Day5/Day5.cpp
         Day6/Day6.h
         Day6/Day6.cpp
+        Day7/Day7.h
+        Day7/Day7.cpp
+        Day7/FileSystemNode/FileSystemNode.h
+        Day7/FileSystemNode/FileSystemNode.cpp
+        Day7/Directory/Directory.h
+        Day7/Directory/Directory.cpp
+        Day7/File/File.h
+        Day7/File/File.cpp
 )
