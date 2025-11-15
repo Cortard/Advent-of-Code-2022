@@ -30,4 +30,8 @@ add_executable(Advent_of_Code_2022 main.cpp
         Day7/Directory/Directory.cpp
         Day7/File/File.h
         Day7/File/File.cpp
+        Day8/Day8.h
+        Day8/Day8.cpp
+        Day8/Tree/Tree.h
+        Day8/Tree/Tree.cpp
 )

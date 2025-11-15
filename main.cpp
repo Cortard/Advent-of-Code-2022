@@ -11,6 +11,7 @@
 #include "Day5/Day5.h"
 #include "Day6/Day6.h"
 #include "Day7/Day7.h"
+#include "Day8/Day8.h"
 
 int main() {
     #ifdef _WIN32
@@ -39,6 +40,9 @@ int main() {
 
     Day7 day7;
     totalExecutionTime += day7.SolveAll();
+
+    Day8 day8;
+    totalExecutionTime += day8.SolveAll();
 
     std::cout << std::format("Total time : {}\n", BaseDay::formatDuration(totalExecutionTime));
 
